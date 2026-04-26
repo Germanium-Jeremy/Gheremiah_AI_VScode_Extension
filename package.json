@@ -1,0 +1,66 @@
+{
+  "name": "gheremiahaiextension",
+  "displayName": "Gheremiah AI",
+  "description": "An AI-powered chat bot for Python, JS, and TS powered by Gemini 2.5 Flash",
+  "version": "0.0.1",
+  "publisher": "NKUNDABAGENZI Jeremie",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Chat",
+    "Machine Learning"
+  ],
+  "activationEvents": [
+    "onCommand:gheremiahai.start"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gheremiahai.start",
+        "title": "Gheremiah AI: Start"
+      }
+    ],
+    "configuration": {
+    "title": "Gheremiah AI Assistant",
+    "properties": {
+      "gemini.apiKey": {
+        "type": "string",
+        "default": "AIzaSyCH0dTYj3r_janXQQVnYxzbq_jDFEDkN0w",
+        "description": "Your Gemini API key from Google AI Studio"
+      }
+    }
+  }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile && npm run build:css",
+    "compile": "tsc -p ./",
+    "watch": "npm run watch:ts & npm run watch:css",
+    "watch:ts": "tsc -watch -p ./",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "start": "http-server"
+  },
+  "keywords": [
+    "AI",
+    "Chat Bot",
+    "Gemini",
+    "VSCode Extension"
+  ],
+  "author": "NKUNDABAGENZI Jeremie",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremieNK/gheremiahaiextension.git"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.85.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.x"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
