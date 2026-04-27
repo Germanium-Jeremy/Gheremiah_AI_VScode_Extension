@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gheremiah AI Assistant</title>
     <link href="./output.css" rel="stylesheet">
+    <!-- Highlight.js CSS for code syntax highlighting -->
+    <link href="package-style.css" rel="stylesheet">
 </head>
 <body class="bg-vscode-bg text-vscode-text h-screen flex flex-col p-4">
     <!-- Header -->
@@ -39,7 +41,8 @@
             </button>
         </div>
         <div class="text-xs text-gray-400 mt-2">
-            <kbd class="px-1 py-0.5 bg-gray-700 rounded">Enter</kbd> to send
+            <kbd class="px-1 py-0.5 bg-gray-700 rounded">Enter</kbd> to send &sol;
+            <kbd class="px-1 py-0.5 bg-gray-700 rounded">Shift + Enter</kbd> for new line
         </div>
     </div>
 
@@ -59,7 +62,7 @@
                 <div class="flex items-center gap-2 mb-1">
                     <span class="text-sm font-semibold text-blue-400">🤖 Gheremiah</span>
                 </div>
-                <div class="message-text prose prose-sm max-w-none"></div>
+                <div class="message-text max-w-none"></div>
                 <div class="text-xs text-gray-400 mt-1"></div>
             </div>
         </div>
@@ -77,6 +80,12 @@
         </div>
     </template>
 
+    <!-- External Libraries for Markdown Processing -->
+    <script src="marked"></script>
+    <script src="highlight"></script>
+    <script src="purify"></script>
+    
+    <!-- Chat Application Script -->
     <script src="./scripts/chat.js"></script>
 </body>
 </html>
